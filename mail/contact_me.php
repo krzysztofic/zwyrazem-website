@@ -19,7 +19,7 @@ $date = $_POST['date'];
 // Create the email and send the message
 $to = 'kontakt@zwyrazem.pl'; 
 $email_subject = "Wiadomosc wyslana przez formularz kontaktowy od $name";
-$email_body = "Pojawila sie nowa wiadomosc, wyslana poprzez formularz kontaktowy.\n\n"."Szczegoly:\n\nImie: $name\n\nEmail: $email_address\n\nWiadomosc:\n$message\n\nRodzaj tekstu: $option\n\nIlosc znakow: $char\n\nData realizacji: $date";
+$email_body = "Pojawila sie nowa wiadomosc, wyslana poprzez formularz kontaktowy.\n\n"."Szczegoly:\n\nImie: $name\n\nEmail: $email_address\n\nWiadomosc:\n$message\n\nRodzaj tekstu: $option\n\nLiczba znakow: $char\n\nData realizacji: $date";
 $headers = "From: noreply@zwyrazem.pl\n"; 
 $headers = "Reply-To: $email_address";	
 mail($to,$email_subject,$email_body,$headers);
