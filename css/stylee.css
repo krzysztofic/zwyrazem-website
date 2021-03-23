@@ -239,7 +239,8 @@ a:focus,
 /* Header Section */
 .intro {
 	display: table;
-	width: 100%;
+	width: 100vw;
+	height: 100vh;
 	padding: 0;
 	background: url(../img/desk2.jpg) center center no-repeat;
 	background-color: #e5e5e5;
@@ -263,6 +264,12 @@ a:focus,
 	margin-bottom: 10px;
 }
 
+@media (max-width: 768px) {
+	.intro h1 {
+		font-size: 41px;
+	}
+}
+
 .intro h1 span {
 	font-weight: 800;
 	color: #5ca9fb;
@@ -275,6 +282,12 @@ a:focus,
 	line-height: 30px;
 	margin: 0 auto;
 	margin-bottom: 60px;
+}
+
+@media (max-width: 768px) {
+	.intro p {
+		font-size: 15px;
+	}
 }
 
 header .intro-text {
