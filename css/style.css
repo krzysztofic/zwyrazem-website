@@ -357,54 +357,41 @@ header .intro-text {
 	margin: 30px 0;
 }
 
-/* Achivements Section */
-#achievements {
-	padding: 80px 0;
-	background: linear-gradient(to right, #15abdf 0%, #5ca9fb 100%);
-}
-
-.achievement-box {
-	text-align: center;
-	margin: 20px 0;
-}
-
-.achievement-box h4 {
-	font-size: 16px;
-	color: rgba(255, 255, 255, 0.8);
-	text-transform: uppercase;
-}
-
-.achievement-box span.count {
-	color: #fff;
-	font-size: 50px;
-	font-weight: 500;
-	display: block;
-}
-
 /* Portfolio Section */
 #portfolio {
 	padding: 100px 0;
+	background: #f6f6f6;
 }
 
 .portfolio-item {
-	margin: 1px -15px 0 -14px;
-	padding: 0;
+	position: relative;
+	margin: 0 auto;
+	height: 200px;
+	background: linear-gradient(to right, #15abdf 0%, #5ca9fb 100%);
+	border-width: 5px;
+	border-style: solid;
+	border-color: white;
+	color: white;
+}
+
+.portfolio-item p {
+	position: absolute;
+	font-size: 22px;
+	text-align: center;
+	top: 50%;
+	transform: translate(0, -50%);
+	font-weight: bold;
 }
 
 .portfolio-item .hover-bg {
-	overflow: hidden;
-	position: relative;
-	margin: 0;
+	position: absolute;
 }
 
 .hover-bg .hover-text {
-	position: absolute;
 	text-align: center;
 	margin: 0 auto;
-	color: #fff;
-	background: linear-gradient(to right, rgba(99, 114, 255, 0.8) 0%, rgba(92, 169, 251, 0.8) 100%);
-	padding: 30% 0 0 0;
-	height: 100%;
+	color: #000;
+	height: 180px;
 	width: 100%;
 	opacity: 0;
 	transition: all 0.5s;
@@ -416,7 +403,7 @@ header .intro-text {
 	-webkit-transform: translateY(100%);
 	transform: translateY(100%);
 	transition: all 0.3s;
-	font-size: 18px;
+	font-size: 22px;
 	letter-spacing: 1px;
 	font-weight: 500;
 	text-transform: uppercase;
@@ -431,6 +418,11 @@ header .intro-text {
 
 .hover-bg:hover .hover-text {
 	opacity: 1;
+}
+
+.portfolio-item:hover p {
+	opacity: 0;
+	transition: all 0.5s;
 }
 
 /* Contact Section */
