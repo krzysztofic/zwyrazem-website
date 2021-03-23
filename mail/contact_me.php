@@ -12,13 +12,16 @@ if(empty($_POST['name'])  		||
 $name = $_POST['name'];
 $email_address = $_POST['email'];
 $message = $_POST['message'];
+$option = $_POST['option'];
+$char = $_POST['char'];
+$date = $_POST['date'];
 	
 // Create the email and send the message
 $to = 'kontakt@zwyrazem.pl'; 
-$email_subject = "Website Contact Form:  $name";
-$email_body = "Pojawiła się nowa wiadomość, wysłana poprzez formularz kontaktowy.\n\n"."Szczegóły wiadomości:\n\nImię: $name\n\nEmail: $email_address\n\nWiadomość:\n$message";
+$email_subject = "Wiadomosc wyslana przez formularz kontaktowy od $name";
+$email_body = "Pojawila sie nowa wiadomosc, wyslana poprzez formularz kontaktowy.\n\n"."Szczegoly:\n\nImie: $name\n\nEmail: $email_address\n\nWiadomosc:\n$message\n\nRodzaj tekstu: $option\n\nIlosc znakow: $char\n\nData realizacji: $date";
 $headers = "From: noreply@zwyrazem.pl\n"; 
-$headers .= "Reply-To: $email_address";	
+$headers = "Reply-To: $email_address";	
 mail($to,$email_subject,$email_body,$headers);
 return true;			
 ?>
