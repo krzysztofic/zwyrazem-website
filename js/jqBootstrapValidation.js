@@ -130,7 +130,7 @@
             // ---------------------------------------------------------
             if ($this.attr("min") !== undefined || $this.attr("aria-valuemin") !== undefined) {
               var min = ($this.attr("min") !== undefined ? $this.attr("min") : $this.attr("aria-valuemin"));
-              message = "Too low: Minimum of '" + min + "'<!-- data-validation-min-message to override -->";
+              message = "Minimalna liczba znaków to '" + min + "'<!-- data-validation-min-message to override -->";
               if ($this.data("validationMinMessage")) {
                 message = $this.data("validationMinMessage");
               }
@@ -836,7 +836,7 @@
 			required: {
 				name: "Required",
 				type: "required",
-				message: "This is required<!-- data-validator-required-message to override -->"
+				message: "Pole wymagane<!-- data-validator-required-message to override -->"
 			},
 			checkone: {
 				name: "Checkone",

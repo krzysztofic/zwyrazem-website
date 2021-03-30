@@ -12,9 +12,7 @@
   <link rel="stylesheet" type="text/css" href="css/bootstrap.css">
   <link rel="stylesheet" type="text/css" href="fonts/font-awesome/css/font-awesome.css">
 
-  <link rel="stylesheet" type="text/css" href="css/style.css">
-  <link rel="stylesheet" type="text/css" href="css/nivo-lightbox/nivo-lightbox.css">
-  <link rel="stylesheet" type="text/css" href="css/nivo-lightbox/default.css">
+  <link rel="stylesheet" type="text/css" href="css/style_main.css">
   <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css?family=Lato:400,700" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css?family=Raleway:300,400,500,600,700,800,900" rel="stylesheet">
@@ -38,6 +36,9 @@
 
     gtag('config', 'G-GKCR30RGR7');
   </script>
+
+  <script src="https://www.google.com/recaptcha/api.js?render=6LdClpMaAAAAAHIH9VSulW4SvMSJLLpqWVPGHH44"></script>
+
 </head>
 
 <body id="page-top" data-spy="scroll" data-target=".navbar-fixed-top">
@@ -227,6 +228,7 @@
             <div class="row">
               <div class="col-md-6">
                 <div class="form-group">
+                  <input type="hidden" id="g-recaptcha-response" name="g-recaptcha-response">
                   <input type="text" id="name" name="name" class="form-control" placeholder="Twoje Imię*"
                     required="required">
                   <p class="help-block text-danger"></p>
@@ -270,10 +272,24 @@
               <input type="checkbox" required="required">Wyrażam zgodę na przetwarzanie moich danych osobowych przez Z
               Wyrazem Paulina Nijak, w celu uzgodnienia szczegółów oferty.*
               <p class="help-block text-danger"></p>
+              <br>
+              *pola wymagane
             </div>
             <div id="success"></div>
             <button type="submit" class="btn btn-custom btn-lg">Wyślij wiadomość</button>
           </form>
+
+          <script>
+            grecaptcha.ready(function () {
+              grecaptcha.execute('6LdClpMaAAAAAHIH9VSulW4SvMSJLLpqWVPGHH44', {
+                  action: 'homepage'
+                })
+                .then(function (token) {
+                  document.getElementById('g-recaptcha-response').value = token;
+                });
+            });
+          </script>
+
         </div>
       </div>
       <div class="col-md-3 col-md-offset-1 contact-info">

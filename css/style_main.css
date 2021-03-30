@@ -5,7 +5,7 @@ html {
 	-webkit-font-smoothing: antialiased !important;
 	color: #777;
 	font-weight: 400;
-	width: 100% !important;
+	width: 100vw !important;
 	height: 100% !important;
 }
 
@@ -35,12 +35,6 @@ h4 {
 	font-weight: 600;
 }
 
-h5 {
-	text-transform: uppercase;
-	font-weight: 700;
-	line-height: 20px;
-}
-
 p {
 	font-size: 15px;
 }
@@ -61,26 +55,12 @@ a:focus {
 	color: #608dfd;
 }
 
-ul,
-ol {
+ul {
 	list-style: none;
 }
 
-ul,
-ol {
+ul {
 	padding: 0;
-	webkit-padding: 0;
-	moz-padding: 0;
-}
-
-hr {
-	height: 2px;
-	width: 70px;
-	text-align: center;
-	position: relative;
-	background: #1E7A46;
-	margin-bottom: 20px;
-	border: 0;
 }
 
 /* Navigation */
@@ -240,7 +220,6 @@ a:focus,
 .intro {
 	display: table;
 	width: 100vw;
-	height: 100vh;
 	padding: 0;
 	background: url(../img/desk2.jpg) center center no-repeat;
 	background-color: #e5e5e5;
@@ -424,7 +403,6 @@ header .intro-text {
 
 .hover-bg:hover .hover-text>h4 {
 	opacity: 1;
-	-webkit-backface-visibility: hidden;
 	-webkit-transform: translateY(0);
 	transform: translateY(0);
 }
@@ -511,7 +489,7 @@ label {
 	padding: 6px 12px;
 	font-size: 16px;
 	line-height: 1.42857143;
-	color: #444;
+	color: #777;
 	background-color: #fff;
 	background-image: none;
 	border: 1px solid #ddd;

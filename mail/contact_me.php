@@ -1,4 +1,7 @@
 <?php
+
+include("captcha-code.php");
+
 // Check for empty fields
 if(empty($_POST['name'])  		||
    empty($_POST['email']) 		||
@@ -9,12 +12,31 @@ if(empty($_POST['name'])  		||
 	return false;
    }
 	
+   if($_POST) {
+      function getCaptcha($SecretKey){
+
+         $Response = file_get_contents("https://www.google.com/recaptcha/api/siteverify?secret=".SECRET_KEY."&response={$SecretKey}");
+         $Return = json_decode($Response);
+         return $Return;
+      }
+      $Return = getCaptcha($_POST['g-recaptcha-response']);
+
+         if ($Return->success ==true && $Return->score > 0.5) {
+            echo "Wszystko ok";
+         }else{
+            echo "Spróbuj później...";
+         }
+      
+   }
+
 $name = $_POST['name'];
 $email_address = $_POST['email'];
 $message = $_POST['message'];
 $option = $_POST['option'];
 $char = $_POST['char'];
 $date = $_POST['date'];
+
+$headers = 'Content-type: text/html; charset=utf-8';
 	
 // Create the email and send the message
 $to = 'kontakt@zwyrazem.pl'; 
