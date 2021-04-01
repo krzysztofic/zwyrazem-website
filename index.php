@@ -11,7 +11,7 @@
 
   <link rel="stylesheet" type="text/css" href="<?php echo get_bloginfo('template_directory') ?>/css/bootstrap.css" />
   <link rel="stylesheet" type="text/css" href="<?php echo get_bloginfo('template_directory') ?>/fonts/font-awesome/css/font-awesome.css">
-  <link rel="stylesheet" type="text/css" href="<?php echo get_bloginfo('template_directory') ?>/css/style_main.css" />
+  <link rel="stylesheet" type="text/css" href="<?php echo get_bloginfo('template_directory') ?>/style.css" />
 
   <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css?family=Lato:400,700" rel="stylesheet">
@@ -59,6 +59,7 @@
           <li><a href="#features" class="page-scroll">Oferta</a></li>
           <li><a href="#about" class="page-scroll">O mnie</a></li>
           <li><a href="#portfolio" class="page-scroll">Portfolio</a></li>
+          <li><a href="#blog" class="page-scroll">Blog</a></li>
           <li><a href="#contact" class="page-scroll">Kontakt</a></li>
         </ul>
       </div>
@@ -209,6 +210,33 @@
 
         </div>
       </div>
+    </div>
+  </div>
+
+  <div id="blog" class="text-center">
+        <div class="container">
+            <div class="section-title">
+                <h2>Blog</h2>
+                <p>Zobacz najnowsze wpisy!</p>
+            </div>
+        <div class="row">
+            <div class="blog-posts-latest">
+
+                <?php if (have_posts()) : while (have_posts()): the_post(); ?>
+                    <div class="blog-post col-sm-6 col-md-4 col-lg-4">
+                        <?php if ( has_post_thumbnail() ) : ?>
+                            <a href="<?php the_permalink(); ?>" title="<?php the_title_attribute(); ?>">
+                            <?php the_post_thumbnail(); ?>
+                            <h3><?php the_title() ?>  </h3>
+                            </a>
+                        <?php endif; ?>
+                    </div>
+                <?php endwhile; ?>
+                
+                <?php endif; ?>
+            </div>
+        </div>
+        <button type='button' class="btn btn-custom btn-lg">Zobacz więcej wpisów</button>
     </div>
   </div>
 
