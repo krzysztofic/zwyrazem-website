@@ -156,18 +156,23 @@
         <div class="row">
             <div class="blog-posts-latest">
 
-                <?php if (have_posts()) : while (have_posts()): the_post(); ?>
-                    <div class="blog-post col-sm-6 col-md-4 col-lg-4">
-                        <?php if ( has_post_thumbnail() ) : ?>
-                            <a href="<?php the_permalink(); ?>" title="<?php the_title_attribute(); ?>">
-                            <?php the_post_thumbnail(); ?>
-                            <h3><?php the_title() ?>  </h3>
-                            </a>
-                        <?php endif; ?>
-                    </div>
-                <?php endwhile; ?>
-                
-                <?php endif; ?>
+            <?php
+              $homepagePosts = new WP_Query(array(
+                'posts_per_page' => 3
+              ));
+
+                  while ($homepagePosts->have_posts()) {
+                    $homepagePosts->the_post(); 
+            ?>
+                  <div class="blog-post col-sm-6 col-md-4 col-lg-4">
+                    <?php if ( has_post_thumbnail() ) : ?>
+                      <a href="<?php the_permalink(); ?>" title="<?php the_title_attribute(); ?>">
+                      <?php the_post_thumbnail(); ?>
+                      <h3><?php the_title() ?></h3>
+                      </a>
+                    <?php endif; ?>
+                  </div>
+                    <?php } wp_reset_postdata(); ?>
             </div>
         </div>
         <a href="/wordpress/blog"><button type='button' class="btn btn-custom btn-lg" >Zobacz więcej wpisów</button></a>
